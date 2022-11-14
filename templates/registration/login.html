@@ -5,9 +5,12 @@
 {% block title %} log in {% endblock title %}
 
 {% block content %}
+    <h1>LOGIN</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-success">log in</button>
+        <button type="submit" class="btn btn-success mt-3">log in</button>
     </form>
+    <p>are you new ???? <a href="{% url 'signup' %}" class="btn btn-primary">sign up</a></p>
+    <a href="{% url 'password_reset' %}" class="btn btn-success">forgot password</a>
 {% endblock content %}

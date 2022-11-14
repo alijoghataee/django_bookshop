@@ -6,6 +6,6 @@
     {% if user.is_authenticated %}
         <p>welcome{{ user.username }}<a href="{% url 'logout' %}">logout</a></p>
     {% else %}
-        <a href="{% url 'login' %}">login</a>|<a href="{% url 'signup' %}">signup</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">login</a>|<a href="{% url 'signup' %}" class="btn btn-primary">signup</a>
     {% endif %}
 {% endblock content %}
