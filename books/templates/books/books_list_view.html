@@ -9,6 +9,7 @@
     {% for book in books %}
         <h1>{{ book.title }}</h1>
         <p>{{ book.author }}</p>
+        <a href="{{ book.get_absolute_url }}">جزییات</a>
         <p>--------------------------------------------</p>
     {% endfor %}
 {% endblock content %}
