@@ -1,11 +1,10 @@
 {% extends '_base.html' %}
 
-<html>
-<title>
+
     {% block title %}لیست کتاب ها{% endblock title %}
-</title>
-<body>
+
 {% block content %}
+    <h2><a href="{% url 'book_create' %}">افزودن کتاب</a> </h2>
     {% for book in books %}
         <h1>{{ book.title }}</h1>
         <p>{{ book.author }}</p>
@@ -13,5 +12,3 @@
         <p>--------------------------------------------</p>
     {% endfor %}
 {% endblock content %}
-</body>
-</html>
