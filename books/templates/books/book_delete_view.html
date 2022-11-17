@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}حذف کتاب{% endblock title %}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <h1>کتاب حذف شود؟{{ book.title }}</h1>
+        <input type="submit" value="حذف">
+        <a href="{% url 'books_detail' book.id %}">
+            <button type="button">برگشت</button>
+        </a>
+    </form>
+{% endblock content %}

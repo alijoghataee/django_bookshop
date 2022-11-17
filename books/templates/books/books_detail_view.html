@@ -4,10 +4,12 @@
     {% block title %}جزییات کتاب {{ book.title }}{% endblock title %}
 
 {%  block content %}
-    <h1>{{ book.title }}</h1>
+    <h1>{{ book.title|title }}</h1>
     <p>{{ book.author }}</p>
-    <p>{{ book.description }}</p>
+    <p>{{ book.description|linebreaks }}</p>
     <h4>قیمت: ${{ book.price }}</h4>
     <br>
     <a href="{% url 'books_list' %}">لیست کتاب ها</a>
+    <a href="{% url 'book_update' book.id %}"><button type="button">ویرایش</button> </a>
+    <a href="{% url 'book_delete' book.id %}"><button type="button">حذف</button> </a>
 {% endblock content %}
